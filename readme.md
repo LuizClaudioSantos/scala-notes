@@ -74,3 +74,57 @@ object Conditional {
 
 }
 ```
+
+5. The match is the Scala equivalent to the switch in Java, note that insteat default, it use "_", there other places where we can use "_", it means something in the most of the cases.
+
+```
+ val result1 = a match {
+    case 0 => "zero"
+    case 1 => "one"
+    case _ => "Something else"
+  }
+```
+
+6. We can use expressions in match case.
+```
+  val result2 = a*3 match {
+    case 0 => "zero"
+    case 1 => "one"
+    case _ => "Something else " + a*3
+  }
+```
+7. Here "i" assumes the value of the match expression.
+```
+  val result3 = a match {
+    case 0 => "zero"
+    case 1 => "one"
+    case i => "Something else " + i
+ }
+```
+8. If you want to compare a pre defined variable "b" with the expression in the match, in this case a? The code below doesn't do that, because b is assuming the value of the "a".
+```
+  val result4 = a match {
+    case 0 => "zero"
+    case 1 => "one"
+    case b => "It is b"
+    case _ => "Something else"
+  }
+```
+9. So you can user '' to confirm that you want to use the value of the predefined variable b.
+```
+  val result5 = a match {
+    case 0 => "zero"
+    case 1 => "one"
+    case 'b' => "It is b"
+    case _ => "Something else"
+  }
+```
+10. You can use tuples in match as well, but the case must to be compatible with tuples.
+```
+val result6 = (2,3) match {
+    case (1,2) => "zero"
+    case (1,3) => "one"
+    case i => "Something else " + i
+  }
+```
+
