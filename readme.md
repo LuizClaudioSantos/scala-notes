@@ -20,7 +20,8 @@ First thing first, let the a look at Scala Type Hierarchy (look the picture)
 
 ## Types
 
-Primitves are objects, so you call methods from primitives
+There are no primive types, all primitives are object, so you call methods from primitives.
+
 ```
   (4).toString()
   4.5.toString()
@@ -29,14 +30,15 @@ Primitves are objects, so you call methods from primitives
 
 ## Variables
  
-Variables can be mutable var b = 5 or inmutable val b = 5 , immutable variable are preferred in Scala.
+1. Variables can be mutable *var b = 5* or inmutable *val b = 5* , immutable variables are preferred in Scala.
+2. The type inferred, so "a" in *val a = 5* is a Integer, even more, there is no primitive in Scala, so "a" is a reference to a Integer 
  
  ```
  object Variables {
  
    val a = 5
    var b = 5
- 
+   
  }
 ``` 
   
