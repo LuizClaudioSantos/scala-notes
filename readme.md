@@ -31,15 +31,21 @@ There are no primive types, all primitives are object, so you call methods from 
 ## Variables
  
 1. Variables can be mutable *var b = 5* or inmutable *val b = 5* , immutable variables are preferred in Scala.
-2. The type inferred, so "a" in *val a = 5* is a Integer, even more, there is no primitive in Scala, so "a" is a reference to a Integer 
+2. You can use this sintaxe *val c:Int =5* to be sure about the type of variable c.
+3. The type inferred, so "a" in *val a = 5* is a Integer, even more, there is no primitive in Scala, so "a" is a reference to a Integer.
+4. Tuples are a group of values that can be used to pass as a result of function.  
  
- ```
+```
  object Variables {
  
    val a = 5
    var b = 5
+   val c:Int = 5
+   val x, y, z = 10
    
+   //Tuples
+   val (c,d) = (5,"five")
+   val (e, f, g) = (5, 5.5, "five")
+   val (h, i, j) = (_, 5.5, "five")
  }
-``` 
-  
-  
+```   
