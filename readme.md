@@ -33,7 +33,7 @@ There are no primive types, all primitives are object, so you call methods from 
 1. Variables can be mutable *var b = 5* or inmutable *val b = 5* , immutable variables are preferred in Scala.
 2. You can use this sintaxe *val c:Int =5* to be sure about the type of variable c.
 3. The type inferred, so "a" in *val a = 5* is a Integer, even more, there is no primitive in Scala, so "a" is a reference to a Integer.
-4. Tuples are a group of values that can be used to pass as a result of function.  
+4. Tuples are a group of values that can be used to pass as a result of a function.  
  
 ```
  object Variables {
@@ -49,3 +49,28 @@ There are no primive types, all primitives are object, so you call methods from 
    val (h, i, j) = (_, 5.5, "five")
  }
 ```   
+
+## Conditional
+
+1. The conditional "if" is Scala is a expression, it means, the if returns a value.
+2. Try to figure out, what gonna be the type of less? It will be Unit, as I said above it is  type that means almost anything.
+3. And what gonna be the type of "c" on *val c = if(a < 9) 4* ? It gonna be AnyVal, because the expression is equivalent to *val c = if(a < 9) 4 else ()*, () is Unit, the Scala give back a type that can be appled for both 4 and Unit, 4 and Unit are Any, hence the type of the conditional in this case is Val.
+4. In the same way, the value of d is Any, because 4 and "not less", Int and String, are Any.  
+
+```
+object Conditional {
+
+  val a = 5
+
+  val b = 10
+
+  val bigger = if(a > b) a else b
+  
+  val less = if(a < 7) println("less")
+  
+  val c = if(a < 9) 4
+  
+  val d = if(a < 9) 4 else "not less"
+
+}
+```
