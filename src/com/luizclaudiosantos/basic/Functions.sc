@@ -18,7 +18,9 @@ object Functions {
     helper(n)/n*4
   }
 
+  import scala.annotation._
   def estimatePiTailRecursion(n:Int):Double = {
+    @tailrec
     def helper(n:Int, sum:Int): Double = {
       if(n < 1 ) sum else {
         val x = math.random
