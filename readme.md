@@ -158,10 +158,14 @@ Now this function have to estimate Pi. The idea here is based on the ratio of po
   }
 ``` 
 
-So to prevent that, we need a tail recursion, it means that only call of function itself should be called.
+1. So to prevent that, we need a tail recursion, it means that only call of function itself should be called.
+2. You can use the annotaion @tailrec to be sure that you function is tail recursive.
+3. Note that I can put the import in the middle of the code.
 
 ```
-def estimatePiTailRecursion(n:Int):Double = {
+import scala.annotation._
+  def estimatePiTailRecursion(n:Int):Double = {
+    @tailrec
     def helper(n:Int, sum:Int): Double = {
       if(n < 1 ) sum else {
         val x = math.random
@@ -171,5 +175,5 @@ def estimatePiTailRecursion(n:Int):Double = {
     }
     helper(n, 0)/n*4
   }
-``
+``` 
 
