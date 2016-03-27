@@ -126,3 +126,50 @@ val result6 = (2,3) match {
   }
 ```
 
+## Functions
+1. *def* defines the new function.
+2. *(value:Int)* recives the variable *value* of the type Int.
+3. *(value:Int):Int* indicates that it return a Int.
+4. The return value is the value of the last sentece in the function, in this case value*value.
+5. You should use the "=" to tie function definition to its body, remenber you are not programming in Java.
+6. The "{}" are optional on this case.
+```
+ def square(value:Int):Int = value * value
+```
+
+Recursion function example to calculate the value of a factorial
+
+```
+def factorial(number:Int):Int = if (number < 2 ) 1 else number * factorial(number -1)`
+```
+
+Now this function have to estimate Pi. The idea here is based on the ratio of points inside of circle against of the number of circle but inside of a square that contains the could bring a estimative about the PI. However this algorithm have a problem, recursive calls is not exclusive call of the function, but add other operations *(if(x*x+y*y < 1) 1 else 0) + helper(n-1)*m these operations gone be add to data in tVM stack and a stack overflow exception can be launched for big values of n.
+
+```
+  def estimatePi(n:Int):Double = {
+    def helper(n:Int): Double = {
+      if(n < 1 ) 0 else {
+        val x = math.random
+        val y = math.random
+        (if(x*x+y*y < 1) 1 else 0) + helper(n-1)
+      }
+    }
+    helper(n)/n*4
+  }
+``` 
+
+So to prevent that, we need a tail recursion, it means that only call of function itself should be called.
+
+```
+def estimatePiTailRecursion(n:Int):Double = {
+    def helper(n:Int, sum:Int): Double = {
+      if(n < 1 ) sum else {
+        val x = math.random
+        val y = math.random
+        helper(n-1, sum + (if(x*x+y*y < 1) 1 else 0))
+      }
+    }
+    helper(n, 0)/n*4
+  }
+``
+
