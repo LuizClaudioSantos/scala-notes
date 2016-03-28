@@ -177,3 +177,41 @@ import scala.annotation._
   }
 ``` 
 
+## Collections
+1. You can declare an List as the code below.
+2. The array is mutable, so the code *array1(0)=42* is valid.
+
+```
+  val array1 = Array(1,2,3)
+  array1(0) = 42
+```
+
+1. You can declare a list like the code below.
+2. The list is inmutable, so the code *list(0)=42* is invalid.
+3. You can use the sintaxe *42::list* to add a value to the list, in really, it create a new list with the value.
+```
+val list = List(1,2,3)
+list(0) = 42
+42::list
+```
+
+1. You can determine the size and the type of the elements of Collection using a sintaxe like as *new Array[String](1000)*
+2. Is possible also pass a function to generate values in the collections, to that we can use the method fill.
+```
+val array2 = new Array[String](1000)
+val array3 = Array.fill(100)(math.random)
+```  
+
+But even without the fill method we can fill a collection. The function littleArray below will get its parameter passed by value,so that why array5 get three elements with the same value, however in the function littleArrayByName, the parameter to the function is passed by name, not by value, so a new value is generte for each element of the array 6.
+```
+def littleArray(i:Int):Array[Int] = Array(i,i,i)
+val array5 = littleArray(util.Random.nextInt(10))
+
+def littleArrayByNme(i: => Int):Array[Int] = Array(i,i,i)
+val array6 = littleArrayByNme(util.Random.nextInt())
+```
+
+Another way to fill out the collection is using the lambda expression *i => i\*i*
+```
+val array7 = Array.tabulate(10)(i => i*i)
+```
