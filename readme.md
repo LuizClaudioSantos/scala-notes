@@ -232,4 +232,13 @@ val (before, after) = array3.splitAt(4)
 ```
 
 
-
+1. You can alse have a range in Scala.
+2. The ranges *(1)to(10)* and *1 to 10* are equivalent.
+3. In the ranges you can specify the number that will be used as incremental value.
+```
+val range1 = (1)to(10)
+val range2 = 1 to 10
+val range3 = 1 to 10 by 2
+val range4 = 10 to 1 by -1
+val range5 = 0.1 to 1.0 by 0.1
+```  
