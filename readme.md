@@ -215,3 +215,21 @@ Another way to fill out the collection is using the lambda expression *i => i\*i
 ```
 val array7 = Array.tabulate(10)(i => i*i)
 ```
+
+Adding a element to an array
+```
+2 +: array1
+```
+
+Concatenating two arrays
+```
+array1 ++: array2
+```
+
+Get a tuple form the elements
+```
+val (before, after) = array3.splitAt(4)
+```
+
+
+
