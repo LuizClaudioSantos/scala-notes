@@ -242,3 +242,13 @@ val range3 = 1 to 10 by 2
 val range4 = 10 to 1 by -1
 val range5 = 0.1 to 1.0 by 0.1
 ```  
+
+## Functions
+1. reduceLeft make a in array, in this example it get the first and add to the second, the results add to the third, the new result add to the forth and go on until the end of the array.
+2. flodLetf as reduceLeft make operation with the element, by infere the type to the operations, I mean, if the array is (1,2,3), the result of the *array.foldLeft(0)(_+_)* will be 6, but for *array.foldLeft("0")(_+_)*, the result will be the String "123".
+
+```
+array.reduceLeft((x,y) => x+y)
+array.foldLeft(0)(_+_)
+array.foldLeft("0")(_+_)
+```  
